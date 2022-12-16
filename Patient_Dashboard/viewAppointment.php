@@ -43,7 +43,7 @@ $rowCount = mysqli_num_rows($res);
                         
                           <td><?= @$data['Patid'] ?></td>
                 
-                          <td><?= @$data['Date'] ?></td>
+                          <td><?= @$data['Datee'] ?></td>
                           <td><?= @$data['Fee'] ?></td>
                           <td><?= @$data['NameVac'] ?></td>
                           <td><?= @$data['cnic'] ?></td>

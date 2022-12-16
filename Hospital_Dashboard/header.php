@@ -222,7 +222,9 @@
                 <div class="menu-title">Patient Reports</div>
               </a>
               <ul>
-                <li> <a href="widgets-static-widgets.html"><i class="bi bi-arrow-right-short"></i>Patient Status</a>
+                <li> <a href="patient_report.php"><i class="bi bi-arrow-right-short"></i>Patient Status</a>
+                </li>
+                <li> <a href="#"><i class="bi bi-arrow-right-short"></i>Report List</a>
                 </li>
               </ul>
             </li>

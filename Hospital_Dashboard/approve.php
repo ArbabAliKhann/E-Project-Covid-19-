@@ -45,11 +45,10 @@ function fetch_select(val)
                         <input type="text" class="form-control input1" id="name" placeholder="Enter Your Name"
                             name="name" value = "<?= $data['Patid'] ?>" readonly>
                     </div>
-                    <?php $Date = date('Y-m-d'); ?>
                     <div class="form-group wrap-input1" style="margin: 20px 0;">
                         <label for="name">Date/Time:</label>
                         <input type="text" class="form-control input1" id="name"
-                            name="dates" value = "<?= $data['Date'] ?>">
+                            name="dates" value = "<?= $data['Datee'] ?>">
                     </div>
                     <div class="form-group wrap-input1" style="margin: 20px 0;">
                         <label for="name">Hospital Name:</label>
@@ -84,8 +83,11 @@ function fetch_select(val)
                             $query = 'select * from vaccination';
                             $res = mysqli_query($con, $query);
                             if (mysqli_num_rows($res) > 0) {
-                                while ($data = mysqli_fetch_array($res)) { ?>
-                            <option value="<?= $data['Vacid'] ?>"><?= $data['NameVac'] ?></option>
+                                while ($rs = mysqli_fetch_array($res)) { ?>
+                            <option value="<?= $rs['Vacid'] ?>"
+                            <?php if ($data['Vacid'] == $rs['Vacid']) {
+                                echo 'selected';
+                            } ?>><?= $rs['NameVac'] ?></option>
                             <?php }
                             } else {
                                  ?>
@@ -101,7 +103,7 @@ function fetch_select(val)
                     <div class="form-group wrap-input1" style="margin: 20px 0;">
                         <label for="name">Fees:</label>
                         <input type="text" class="form-control input1" id="new_select"
-                             name="Fees" readonly>
+                             name="Fees" readonly value="<?= $data['Fee'] ?>">
                     </div>
 
                     <button type="submit" class="btn btn-success" name="approve" style="background-color: #2caee2; border: none;">Approve</button>
@@ -128,7 +130,7 @@ function fetch_select(val)
     $Fee = $_POST['Fees'];
     $Vaccid = $_POST['Vacc'];
     $Status = $_POST['status'];
-    $query = "update appointment set Hosid = '$HosName',Patid = '$Name',contact = '$Contact',cnic = '$Cnic',Date = '$Dates',
+    $query = "update appointment set Hosid = '$HosName',Patid = '$Name',contact = '$Contact',cnic = '$Cnic',Datee = '$Dates',
     Fee = '$Fee',Vacid = '$Vaccid', StatusVac = '$Status' where AppId = '$ApPiD'";
     echo $query;
     $res = mysqli_query($con, $query);

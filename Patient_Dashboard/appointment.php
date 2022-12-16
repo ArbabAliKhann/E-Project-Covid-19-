@@ -139,7 +139,7 @@ function fetch_select(val)
     $Vaccid = $_POST['Vacc'];
     $Contact = $_POST['contact'];
     $cnic = $_POST['cnic'];
-    $query = "insert into appointment(Hosid,Patid,Date,Fee,Vacid,cnic,contact) values ('$Hosid','$PatName','$Dates','$Fee','$Vaccid','$cnic','$Contact')";
+    $query = "insert into appointment(Hosid,Patid,Datee,Fee,Vacid,cnic,contact) values ('$Hosid','$PatName','$Dates','$Fee','$Vaccid','$cnic','$Contact')";
     $res = mysqli_query($con, $query);
     if ($res) {
         echo "<script>alert('Data Inserted Successfully');window.location.href = 'viewAppointment.php';</script>";

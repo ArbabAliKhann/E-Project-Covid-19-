@@ -12,7 +12,7 @@
     $Fee = $_POST['Fees'];
     $Vaccid = $_POST['Vacc'];
     $Status = $_POST['status'];
-    $query = "update appointment set Hosid = '$HosName',Patid = '$Name',contact = '$Contact',cnic = '$Cnic',Date = '$Dates',
+    $query = "update appointment set Hosid = '$HosName',Patid = '$Name',contact = '$Contact',cnic = '$Cnic',Datee = '$Dates',
     Fee = '$Fee',Vacid = '$Vaccid', StatusVac = '$Status' where AppId = '$ApPiD'";
     echo $query;
     $res = mysqli_query($con, $query);
